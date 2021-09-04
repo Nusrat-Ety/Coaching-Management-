@@ -1,0 +1,45 @@
+﻿@model CAC_Management.Models.Guardian
+
+@{ ViewData["Title"] = "Guardian Details";
+    Layout = "_LayoutForAdmin"; }
+<hr>
+<body style="        background-color: #db937b;
+        align-content: center;">
+    <h1 style="text-align:center">Guardian Details</h1>
+
+    <div class="container" style="width: 20%;">
+        <div class="form-group">
+            @*<div class="input-group-addon">
+                <form asp-controller="Guardian" asp-action="Search">
+                    <input placeholder="Search By Id" class="form-control" name="id" />
+                    <a asp-controller="Guardian" asp-action="Search" asp-route-id="id"><input type="submit" value="Search" /></a>
+                </form>
+            </div>*@
+        </div>
+    </div>
+
+    <div class="container">
+        <table border="1" class="table table-bordered">
+            <thead>
+                <tr>
+                    <td style="text-align:center; font-weight: bold;">Guardian Id</td>
+                    <td style="text-align:center; font-weight: bold;">Guardian Name</td>
+                    <td style="text-align:center; font-weight: bold;">Contact</td>
+                    <td style="text-align:center; font-weight: bold;">Address</td>
+                    <td style="text-align:center; font-weight: bold;">Email</td>
+                    <td style="text-align:center; font-weight: bold;">Password</td>
+
+                </tr>
+            </thead>
+            <tr>
+                <td style="text-align:center">@Model.GuardianId</td>
+                <td style="text-align:center">@Model.GuardianName</td>
+                <td style="text-align:center">@Model.Contact</td>
+                <td style="text-align:center">@Model.Address</td>
+                <td style="text-align:center">@Model.Email</td>
+                <td style="text-align:center">@Model.Password</td>
+
+            </tr>
+        </table>
+    </div>
+</body>

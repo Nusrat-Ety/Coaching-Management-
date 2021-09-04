@@ -1,0 +1,104 @@
+﻿@model IEnumerable<CAC_Management.Models.st_routine>
+@{
+    Layout = "_LayoutForAdmin";
+    ViewData["Title"] = "RoutineIndex";
+
+}
+<body style="background-color: #db937b;align-content: center;">
+    <div style="margin:15px;">
+         <h2><center> <strong> Routine  </strong></center></h2>
+        <br />
+        <a asp-action="Routine" class="btn btn-primary">Create Routine</a>
+
+        <table class="table table-bordered">
+            <tr>
+                <th>
+                    <center>
+                        @Html.DisplayNameFor(m => m.FirstOrDefault().ID)
+                    </center>
+                </th>
+                <th>
+                    <center>
+                        @Html.DisplayNameFor(m => m.FirstOrDefault().day)
+                    </center>
+                </th>
+                <th>
+                    <center>
+                        @Html.DisplayNameFor(m => m.FirstOrDefault().sub)
+                    </center>
+                </th>
+                <th>
+                    <center>
+                        @Html.DisplayNameFor(m => m.FirstOrDefault().time)
+                    </center>
+                </th>
+                <th>
+                    <center>
+                        <strong>
+                            @Html.DisplayNameFor(m => m.FirstOrDefault().instructor)
+                        </strong>
+                    </center>
+                </th>
+                <th>
+                    <center>
+                        <strong>
+                          Action
+                        </strong>
+                    </center>
+                </th>
+                </tr>
+
+                @foreach (var item in Model)
+            {
+      <tr>   
+            <td>
+                <center>
+                    @Html.DisplayFor(p => item.ID)
+                </center>
+
+            </td>
+            <td>
+                <center>
+                    @Html.DisplayFor(p => item.day)
+                </center>
+
+            </td>
+
+
+            
+                  <td>
+                              
+                      
+                    <center>
+                            @Html.DisplayFor(p => item.sub)
+                         </center>
+
+                  </td>
+                                            <td>
+                                                <center>
+                                                    @Html.DisplayFor(p => item.time)
+                                                </center>
+
+                                            </td>
+                                                            <td>
+                                                                <center>
+                                                                    @Html.DisplayFor(p => item.instructor)
+
+
+                                                                </center>
+                                                            </td>
+                                                                            <td style="text-align:center">
+
+                                                                                <a asp-action="EditRoutine" asp-route-id="@item.ID" class="btn btn-primary">Edit</a>
+                                                                                <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-primary">Delete</a>
+                                                                            </td>
+                                                        </tr>
+                                                        
+            }
+
+
+           
+
+        </table>
+    </div>
+    </body>

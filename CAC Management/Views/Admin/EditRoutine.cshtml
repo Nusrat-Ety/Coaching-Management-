@@ -1,0 +1,55 @@
+﻿@model CAC_Management.Models.st_routine
+@{ ViewData["Title"] = "Update Routine Information";
+    Layout = "_LayoutForAdmin"; }
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CAC_Management</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="background-color: #db937b;align-content: center;">
+    <div class="container" style="width: 40%;">
+        <form asp-controller="Admin" asp-action="Edit" method="post">
+            <div asp-validation-summary="All"></div>
+            <input type="hidden" asp-for="ID" />
+           
+            <hr />
+
+            <div class="form-group">
+                <label asp-for="ID"></label>
+                <input asp-for="ID" class="form-control" readonly />
+                <span asp-validation-for="ID"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="day"></label>
+                <input asp-for="day" class="form-control" />
+                <span asp-validation-for="day"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="sub"></label>
+                <input asp-for="sub" class="form-control" />
+                <span asp-validation-for="sub"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="time"></label>
+                <input asp-for="time" class="form-control" />
+                <span asp-validation-for="time"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="instructor"></label>
+                <input asp-for="instructor" class="form-control" />
+                <span asp-validation-for="instructor"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-danger" asp-route-id="@Model.ID" />
+                <a asp-action="RoutineIndex" class="btn btn-primary">Back To List</a>
+            </div>
+
+
+            
+        </form>
+    </div>
+</body>
+</html>

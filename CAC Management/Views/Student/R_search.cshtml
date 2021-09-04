@@ -1,0 +1,33 @@
+﻿@model CAC_Management.Models.Result
+
+@{ ViewData["Title"] = "R_Search";
+                Layout = "_LayoutForStudent"; }
+<hr>
+<body style="background-color: rosybrown;align-content: center;">
+
+    <h1 style="text-align:center">Result Details</h1>
+    <div class="container">
+        <table border="1" class="table table-bordered">
+            <thead>
+                <tr>
+                    <td style="text-align:center; font-weight: bold;">Student Id</td>
+                    <td style="text-align:center; font-weight: bold;">Student Name</td>
+                    <td style="text-align:center; font-weight: bold;">Subject</td>
+                    <td style="text-align:center; font-weight: bold;">Marks</td>
+                    <td style="text-align:center; font-weight: bold;">Performance</td>
+                    
+
+                </tr>
+            </thead>
+            <tr>
+                <td style="text-align:center">@Model.StudentId</td>
+                <td style="text-align:center">@Model.StudentName</td>
+                <td style="text-align:center">@Model.Subject</td>
+                <td style="text-align:center">@Model.Marks</td>
+                <td style="text-align:center">@Model.Performance</td>
+              
+
+            </tr>
+        </table>
+    </div>
+</body>

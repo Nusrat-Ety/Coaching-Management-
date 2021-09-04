@@ -1,0 +1,92 @@
+﻿@model IEnumerable<CAC_Management.Models.Result>
+@{ Layout = "_LayoutForStudent";
+    ViewData["Title"] = "R_View"; }
+<body style="background-color: #db937b;align-content: center;">
+    <div style="margin:15px;">
+        <div class="input-group-addon" style="width: 50%;align-content: center;">
+            
+             
+                    <form asp-controller="Student" asp-action="R_search">
+                        <input placeholder="Search By name" class="form-control" name="id" />
+                        <a asp-controller="Student" asp-action="ResultSearch" asp-route-id="StudentName"><input type="submit" value="search" /></a>
+                    </form>
+                </div>
+                <h2><center> <strong> Result  </strong></center></h2>
+                <br />
+                <table class="table table-bordered">
+                    <tr>
+                        <th>
+                            <center>
+                                @Html.DisplayNameFor(m => m.FirstOrDefault().StudentId)
+                            </center>
+                        </th>
+                        <th>
+                            <center>
+                                @Html.DisplayNameFor(m => m.FirstOrDefault().StudentName)
+                            </center>
+                        </th>
+                        <th>
+                            <center>
+                                @Html.DisplayNameFor(m => m.FirstOrDefault().Subject)
+                            </center>
+                        </th>
+                        <th>
+                            <center>
+                                @Html.DisplayNameFor(m => m.FirstOrDefault().Marks)
+                            </center>
+                        </th>
+                        <th>
+                            <center>
+                                <strong>
+                                    @Html.DisplayNameFor(m => m.FirstOrDefault().Performance)
+                                </strong>
+                            </center>
+                        </th>
+
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+        <tr>
+            <td>
+                <center>
+                    @Html.DisplayFor(p => item.StudentId)
+                </center>
+
+            </td>
+            <td>
+                <center>
+                    @Html.DisplayFor(p => item.StudentName)
+                </center>
+
+            </td>
+
+
+
+            <td>
+
+
+                <center>
+                    @Html.DisplayFor(p => item.Subject)
+                </center>
+
+            </td>
+            <td>
+                <center>
+                    @Html.DisplayFor(p => item.Marks)
+                </center>
+
+            </td>
+            <td>
+                <center>
+                    @Html.DisplayFor(p => item.Performance)
+
+
+                </center>
+
+        </tr>
+}
+
+                </table>
+            </div>
+</body>

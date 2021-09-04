@@ -1,0 +1,59 @@
+﻿@model CAC_Management.Models.Result
+@{ ViewData["Title"] = "ResultAdd";
+                Layout = "_LayoutForTeacher"; }
+<body style="background-color: #db937b;align-content: center;">
+
+    <h2>Create Result</h2>
+
+    <form method="post" asp-action="ResultAdd">
+        <div style="border:1px solid black; margin:10px;">
+            <div class="row" style="padding:30px;">
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-1">
+                            <label asp-for="StudentId">StudentId</label>
+                        </div>
+                        <div class="col-sm-4">
+                            <input asp-for="StudentId" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <label asp-for="StudentName">StudentName</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input asp-for="StudentName" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <label asp-for="Subject">Subject</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input asp-for="Subject" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-sm-1">
+                                <label asp-for="Marks">Marks</label>
+                            </div>
+                            <div class="col-sm-4">
+                                <input asp-for="Marks" />
+                            </div>
+                        </div>
+                    </div>
+       
+                    <div class="form-group">
+                        <input value="Create" type="submit" class="btn btn-primary" />
+                        <a asp-action="ResultIndex" class="btn btn-primary">Back To List</a>
+                    </div>
+                </div>
+
+    </form>
+
+</body>
